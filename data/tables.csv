@@ -1,0 +1,32 @@
+Table,Group,Description,One row per,Format,Approx. rows,Columns
+customers,Core,"Customer profile, segment, consent and contact details as held in CRM.",CRM record (a person may have more than one record),CSV,~1.02M,148
+card_accounts,Core,"Credit card accounts: limits, balances, utilisation, DPD, status.",card account per snapshot_date,CSV,~660K,148
+loan_accounts,Core,"Personal loans, auto loans, mortgages and lines of credit: balances, schedule, DPD.",loan per snapshot_date,CSV,~404.5K,135
+deposit_accounts,Core,"Chequing, savings, TFSA and USD accounts, plus overdraft facility and salary indicators.",deposit account per snapshot_date,CSV,~780K,143
+collections_cases,Core,"Collections cases: bucket, queue, treatment, current promise to pay, outcome.",case,CSV,~340K,132
+contact_history,Core,"Every contact attempt: channel, time, outcome, link to note and transcript.",contact attempt,CSV,~2.5M,128
+promises_to_pay,Core,"Promises to pay made on cases: amount, due date, status.",promise,CSV,~400K,29
+agent_notes,Unstructured,Free-text notes written by agents after contacts.,note,CSV / text,~1.5M,26
+call_transcripts,Unstructured,Synthetic call transcripts with turn-level text.,transcript,JSON,"25,000",39
+voice_samples,Unstructured,Synthetic call recordings (optional) with audio metadata.,recording,WAV + metadata,"2,000",34
+external,External,"Synthetic bureau-style pulls: score, trades, inquiries, reported identity details.",bureau pull (latest per customer),CSV,~1M,122
+loan_instalments,History,Scheduled and paid instalments per loan.,loan per instalment,Parquet (by year),~20M,18
+transactions,History,"Individual deposit transactions, last 13 months only, for a customer sample.",transaction,Parquet (by year),~10M,24
+card_statements,History,Card statement detail for the last 24 cycles.,card per statement,Parquet (by year),~8M,25
+account_monthly_snapshot,History,Month-end history of every account across all products.,account per month-end,Parquet (by year),,15
+bureau_history,History,"Bureau score history, every April and October.",subject per pull,Parquet (by year),~5M,9
+salary_credit_history,History,Monthly salary and income credit pattern per deposit account.,deposit account per month,Parquet (by year),~6M,10
+model_scores,Decisioning,"Existing model scores (risk, break probability, contact timing) with score date and version.",score,CSV,,33
+offers,Decisioning,Treatment and hardship offers made to customers and their responses.,offer,CSV,,19
+metric_definitions,Semantic,"Certified business metrics: definition, formula, grain, source tables.",metric,CSV,,14
+benchmark_questions,Semantic,Natural-language benchmark questions for the Layer 2 demo.,question,CSV,,11
+reference_documents,Policy,"Policy and procedure documents for RAG (path, version, applicability).",document,CSV + files,,17
+hardship_programs,Policy,"Hardship program rules: eligibility, limits, payment relief.",program version,CSV,,21
+qa_checklist,Policy,Call quality and compliance checklist items with pass criteria.,checklist item,CSV,,10
+agents,Operations,"Agent roster: site, team, skills, languages, tenure.",agent,CSV,,30
+case_assignment_history,Operations,Which agent or queue held each case and why.,assignment,CSV,,23
+agent_shifts,Operations,Agent shift schedule and capacity.,agent shift,CSV,,15
+channel_capacity,Operations,"Daily channel capacity, usage and cost by time band.","date, channel and time band",CSV,,11
+ops_events,Operations,"Incidents and outages (system, time window, affected tables).",event,CSV,,10
+geo_reference,Reference,"Postal-area reference: province, city, region, time zone.",FSA,CSV,,15
+code_lookups,Reference,"Code lists used across tables (outcome codes, reasons, etc.).",code,CSV,,7

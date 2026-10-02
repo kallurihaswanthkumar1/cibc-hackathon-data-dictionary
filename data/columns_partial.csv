@@ -1,0 +1,52 @@
+Table,Column,Type,Key,Description,Example,Sensitivity
+customers,crm_customer_id,string,PK,CRM primary key for the customer record,RYM-1142,
+customers,customer_uuid,string,,Internal UUID assigned by CRM at creation,9f1c2a7e-...,
+customers,record_created_ts,timestamp,,When the CRM record was created,2016-04-11 10:22:05,
+customers,record_source,enum,,How the CRM record was created,branch_onboarding,
+customers,salutation,enum,,Title as captured,Mr.,Quasi-identifier
+customers,first_name,string,,Legal first name,Ryan,Direct PII
+customers,middle_name,string,,Middle name or initial,J,Direct PII
+customers,last_name,string,,Legal last name,Mitchell,Direct PII
+customers,preferred_name,string,,Name the customer prefers to be called,Ry,Direct PII
+customers,full_name_raw,string,,Full name as displayed in legacy CRM screen,Ryan J Mitchell,Direct PII
+customers,name_suffix,enum,,"Jr., Sr., III",,Direct PII
+customers,date_of_birth,date,,Date of birth (ISO),1988-03-14,Direct PII
+customers,dob_raw,string,,DOB as keyed in source screen,14/03/1988,Direct PII
+customers,age,int,,Age in years at snapshot date,38,Quasi-identifier
+customers,age_band,enum,,Age band,35-44,Quasi-identifier
+customers,gender_code,enum,,Self-identified gender,M,Protected attribute
+customers,marital_status,enum,,Marital status as declared at onboarding,common_law,Protected attribute
+customers,national_id_hash,string,,SHA-256 hash (salted) of the customer's national ID number. The raw number is never stored.,3ab9...e1,Direct PII
+customers,national_id_present_flag,boolean,,Whether a national ID number was provided.,true,
+customers,id_document_type,enum,,Primary ID used at onboarding,ON_drivers_licence,Quasi-identifier
+customers,citizenship_status,enum,,Residency status at onboarding,citizen,Protected attribute
+customers,primary_phone_raw,string,,Primary phone as keyed,519-555-0142,Direct PII
+customers,primary_phone_e164,string,,Normalised primary phone,+15195550142,Direct PII
+customers,primary_phone_type,enum,,Mobile / landline / VoIP,mobile,
+customers,secondary_phone_raw,string,,Secondary phone,226-555-0187,Direct PII
+customers,work_phone_raw,string,,Work phone,519-555-0110 x204,Direct PII
+customers,email,string,,Primary email,ryan.mitchell88@example.ca,Direct PII
+customers,email_verified_flag,boolean,,Email verified via link,true,
+customers,email_bounce_flag,boolean,,Hard bounce recorded in last 12 months,false,
+customers,address_line1,string,,Street address,1847 Ouellette Ave,Direct PII
+customers,address_line2,string,,Unit / apartment,Unit 304,Direct PII
+customers,city,string,,Municipality,Windsor,Quasi-identifier
+customers,province_code,enum,,Province/territory (2-letter),ON,Quasi-identifier
+customers,postal_code,string,,Normalised postal code (A1A 1A1),N9A 4J2,Quasi-identifier
+customers,postal_code_raw,string,,Postal code as keyed,n9a4j2,Quasi-identifier
+customers,fsa,string,,Forward Sortation Area (first 3 chars),N9A,Quasi-identifier
+customers,country_code,enum,,Country,CA,
+customers,time_zone,enum,,IANA time zone derived from province,America/Toronto,
+customers,address_since_date,date,,Date moved to current address,2021-07-01,
+customers,returned_mail_flag,boolean,,Mail returned undeliverable in last 12m,false,
+customers,urban_rural,enum,,Urban / rural by postal code,urban,Quasi-identifier
+customers,geo_lat,"decimal(8,5)",,FSA centroid latitude,42.30556,Quasi-identifier
+customers,geo_lon,"decimal(8,5)",,FSA centroid longitude,-83.02540,Quasi-identifier
+customers,employment_status,enum,,Declared employment status,employed_hourly,
+customers,occupation_category,enum,,NOC-style broad occupation group,manufacturing_utilities,
+customers,industry_naics2,string,,NAICS 2-digit industry of employer,33,
+customers,employer_name,string,,Employer as declared,Lakeshore Auto Parts Ltd.,Quasi-identifier
+customers,employment_start_date,date,,Start date with current employer,2014-05-20,
+customers,pay_frequency,enum,,Declared pay frequency,biweekly,
+customers,declared_annual_income,"decimal(12,2)",,Gross annual income declared at last application (CAD),58400.00,
+customers,income_verified_flag,boolean,,Income verified by document,true,

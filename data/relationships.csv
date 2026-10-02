@@ -1,0 +1,49 @@
+From table,From column,To table,To column
+card_accounts,src_customer_ref,customers,(via identity matching)
+loan_accounts,src_customer_ref,customers,(via identity matching)
+loan_accounts,pad_source_account,deposit_accounts,deposit_account_id
+deposit_accounts,src_customer_ref,customers,(via identity matching)
+collections_cases,coll_customer_ref,customers,crm_customer_id
+collections_cases,assigned_agent_id,agents,agent_id
+collections_cases,current_ptp_id,promises_to_pay,ptp_id
+collections_cases,last_note_id,agent_notes,note_id
+contact_history,case_id,collections_cases,case_id
+contact_history,crm_customer_id,customers,crm_customer_id
+contact_history,agent_id,agents,agent_id
+contact_history,ptp_id,promises_to_pay,ptp_id
+contact_history,transcript_id,call_transcripts,transcript_id
+contact_history,voice_sample_id,voice_samples,voice_sample_id
+contact_history,note_id,agent_notes,note_id
+promises_to_pay,case_id,collections_cases,case_id
+promises_to_pay,crm_customer_id,customers,crm_customer_id
+promises_to_pay,contact_id,contact_history,contact_id
+promises_to_pay,agent_id,agents,agent_id
+agent_notes,contact_id,contact_history,contact_id
+agent_notes,case_id,collections_cases,case_id
+agent_notes,crm_customer_id,customers,crm_customer_id
+agent_notes,agent_id,agents,agent_id
+call_transcripts,contact_id,contact_history,contact_id
+call_transcripts,voice_sample_id,voice_samples,voice_sample_id
+call_transcripts,case_id,collections_cases,case_id
+call_transcripts,crm_customer_id,customers,crm_customer_id
+call_transcripts,agent_id,agents,agent_id
+voice_samples,transcript_id,call_transcripts,transcript_id
+voice_samples,contact_id,contact_history,contact_id
+external,bank_subject_ref,customers,(via identity matching)
+transactions,ptp_id_matched,promises_to_pay,ptp_id
+account_monthly_snapshot,crm_customer_id,customers,crm_customer_id
+salary_credit_history,crm_customer_id,customers,crm_customer_id
+model_scores,crm_customer_id,customers,crm_customer_id
+model_scores,case_id,collections_cases,case_id
+model_scores,ptp_id,promises_to_pay,ptp_id
+offers,case_id,collections_cases,case_id
+offers,contact_id,contact_history,contact_id
+offers,agent_id,agents,agent_id
+offers,program_id,hardship_programs,program_id
+benchmark_questions,metric_id,metric_definitions,metric_id
+hardship_programs,policy_section,reference_documents,doc_id
+case_assignment_history,case_id,collections_cases,case_id
+case_assignment_history,agent_id,agents,agent_id
+agent_shifts,agent_id,agents,agent_id
+channel_capacity,ops_event_id,ops_events,event_id
+ops_events,reference_doc_id,reference_documents,doc_id

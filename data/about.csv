@@ -1,0 +1,9 @@
+Field,Value
+Snapshot date,28 Sep 2026
+History,Oct 2016 to Sep 2026
+Scale,"~1M customers, ~1.84M accounts"
+Formats,"CSV (small tables), Parquet by year (history tables), JSON (transcripts), WAV (voice)"
+Data,"Fully synthetic. One bank. A customer can hold several products (cards, loans, deposits) at that bank."
+Customer keys,"Each product system (cards, loans, deposits, CRM, collections) uses its own customer key. Linking them into one customer is part of the challenge."
+Sensitivity,"Direct PII, Quasi-identifier, Protected attribute. Do not use protected attributes in decisions."
+Sheets,Tables · Columns · Relationships
